@@ -1,0 +1,5 @@
+.env
+temp
+data/mastodon-roadmap
+data/what_capital.json
+node_modules

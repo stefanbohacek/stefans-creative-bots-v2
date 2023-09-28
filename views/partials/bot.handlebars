@@ -1,0 +1,47 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row mb-3 bot-showcase">
+      <div class="col-sm-12">
+        {{#if about.about_url}}
+            <a rel="me" href="{{about_url}}">
+          {{else}}
+            <a rel="me" href="https://glitch.com/edit/#!/{{@root.project_name}}?path={{file}}">
+          {{/if}}      
+        {{#if about.thumbnail}}
+            <img class="img-thumbnail mb-2 mr-3" src="{{about.thumbnail}}" alt="...">
+        {{else}}
+          <img class="img-thumbnail mb-2 mr-3" src="https://generative-placeholders.glitch.me/image?width=360&height=200&style=cellular-automata&cells=10&colors={{@root.generative_placeholders_color}}&{{@key}}"  alt="...">
+        {{/if}}
+        </a>
+      </div>
+      <div class="col-sm-12">
+        <h2 class="mt-3">{{about.name}}</h2>
+        <p>{{about.description}}</p>
+        <ul class="list-unstyled">
+           {{#if about.interval_human}}
+              <li><span title="Post frequency">⌛</span> {{about.interval_human}}</li>
+           {{/if}}
+           {{#if about.next_run}}
+              <li><span title="Next run">⏱️</span> {{about.next_run}}</li>
+           {{/if}}      
+           {{#if about.last_run}}
+              <li><span title="Last run">📅</span> {{about.last_run}}</li>
+           {{/if}}      
+        </ul>
+      </div>
+      <div class="col-sm-12">
+        <p>
+          {{#if about.about_url}}
+            <a rel="me" href="{{about.about_url}}" class="btn btn-dark mt-2">Learn more</a>
+          {{/if}}      
+          {{#if about.links}}
+            {{#each about.links}}
+              <a rel="me" href="{{this.url}}" class="btn btn-light mt-2">{{this.title}}</a>
+            {{/each}}
+          {{/if}}      
+          <a rel="me" href="{{about.source_url}}" class="btn btn-light mt-2">View source</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
